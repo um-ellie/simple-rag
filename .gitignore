@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# ChromaDB data (rebuilt by ingest.py)
+data/
+
+# Environment and secrets
+.env
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
