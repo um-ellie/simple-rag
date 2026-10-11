@@ -1,4 +1,5 @@
 import re
+from dataclasses import dataclass
 
 from config import CHUNK_OVERLAP_CHARS, MAX_CHUNK_CHARS
 
@@ -97,7 +98,7 @@ def chunk_markdown(
     for heading, body in split_sections(markdown):
         for piece in split_text(body, max_chars, overlap):
             text = f"{heading}\n\n{piece}" if heading else piece
-            chunks.append(Chunk(text=text, heading=heading, inxdex=len(chunks)))
+            chunks.append(Chunk(text=text, heading=heading, index=len(chunks)))
 
     return chunks
 
